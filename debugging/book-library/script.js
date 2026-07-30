@@ -29,11 +29,13 @@ const check = document.getElementById("check");
 //via Book function and start render function
 function submit() {
   if (
-    title.value == null ||
-    title.value == "" ||
-    pages.value == null ||
-    pages.value == ""
-  ) {
+  title.value == null ||
+  title.value == "" ||
+  author.value == null ||
+  author.value == "" ||
+  pages.value == null ||
+  pages.value == ""
+) {
     alert("Please fill all fields!");
     return false;
   } else {
@@ -95,7 +97,7 @@ function render() {
     delButton.className = "btn btn-warning";
     delButton.innerHTML = "Delete";
     delButton.addEventListener("click", function () {
-      alert(You've deleted title: ${myLibrary[i].title});
+      alert(`You've deleted title: ${myLibrary[i].title}`);
       myLibrary.splice(i, 1);
       render();
     });
